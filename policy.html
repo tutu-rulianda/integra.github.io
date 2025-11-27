@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7F6P778BVR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-7F6P778BVR');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integra Studio - Privacy Policy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+    <link rel="manifest" href="/site.webmanifest">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        :root {
+            --primary: #007bff;
+            --primary-dark: #0056b3;
+            --secondary: #2563eb;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --gray-light: #e2e8f0;
+        }
+
+        body {
+            background: #e1e3e6;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: rgba(240, 246, 253, 1) !important;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            /* Fixed height - no min-height */
+            height: 70px;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* Remove vertical padding from container */
+            padding: 0 20px;
+            position: relative;
+            /* Container should also be exactly 70px */
+            height: 70px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--secondary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        /* nav a:hover {
+            color: var(--dark);
+        } */
+
+        .header-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Hamburger Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            width: 30px;
+            height: 21px;
+            position: relative;
+        }
+
+        .menu-toggle span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: var(--dark);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            position: absolute;
+        }
+
+        .menu-toggle span:nth-child(1) {
+            top: 0;
+        }
+
+        .menu-toggle span:nth-child(2) {
+            top: 9px;
+        }
+
+        .menu-toggle span:nth-child(3) {
+            top: 18px;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg);
+            top: 9px;
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg);
+            top: 9px;
+        }
+
+        /* Mobile Navigation - Fixed with proper margins */
+        /* Mobile Navigation */
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 40px;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            z-index: 999;
+        }
+
+        .mobile-nav.active {
+            display: block;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .mobile-nav li {
+            margin-bottom: 15px;
+        }
+
+        .mobile-nav a {
+            text-decoration: none;
+            color: var(--dark);
+            left: 40px;
+            font-size: 18px;
+            line-height: 0.5;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: block;
+            padding: 8px 0;
+        }
+
+        /* .mobile-nav a:hover {
+            color: var(--dark);
+        } */
+
+        .mobile-nav .header-buttons {
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        /* Responsive Design - Fixed mobile header padding */
+        @media (max-width: 1280px) {
+            .header-container {
+                padding: 15px 20px;
+                /* Added left and right padding */
+            }
+
+            nav,
+            .header-buttons {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            /* Ensure mobile nav has proper margins */
+            .mobile-nav {
+                left: 0;
+                right: 0;
+                width: 100%;
+                border-radius: 0;
+            }
+        }
+
+        @media (min-width: 1281px) {
+            .mobile-nav {
+                display: none;
+            }
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .integra-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .integra-logo span {
+            display: flex;
+            align-items: center;
+            line-height: 1;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            cursor: default !important;
+            transition: color 0.3s, transform 0.3s cubic-bezier(.68, -0.55, .27, 1.55) !important;
+        }
+
+        h1:hover,
+        h2:hover,
+        h3:hover,
+        h4:hover,
+        h5:hover {
+            color: #333 !important;
+            transform: scale(1.02) skewX(-2deg) !important;
+        }
+
+        p {
+            cursor: default !important;
+            transition: color 0.3s, transform 0.3s cubic-bezier(.68, -0.55, .27, 1.55) !important;
+        }
+
+        p:hover {
+            color: #333 !important;
+            transform: scale(1.02) skewX(-2deg) !important;
+        }
+
+        .app-header h1 {
+            transition: color 0.3s, transform 0.3s cubic-bezier(.68, -0.55, .27, 1.55) !important;
+        }
+
+        .app-header h1:hover {
+            color: var(--primary-dark) !important;
+            transform: scale(1.05) skewX(-2deg) !important;
+        }
+
+        .app-header .tagline {
+            transition: color 0.3s, transform 0.3s cubic-bezier(.68, -0.55, .27, 1.55) !important;
+        }
+
+        .app-header .tagline:hover {
+            color: var(--primary-dark) !important;
+            transform: scale(1.05) skewX(-2deg) !important;
+        }
+
+        .li-margin {
+            margin-left: 1.065rem;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="integra-logo" style="border: none; background-image: none; display: flex; align-items: center; gap: 10px; text-decoration: none;">
+                <span style="color: #007bff; font-size: 24px; font-weight: 700; line-height: 1; display: flex; align-items: center;">Integra Studio</span>
+            </a>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="changelog.html">Changelog</a></li>
+                    <li><a href="citation.html">Citation</a></li>
+                    <li><a href="credits.html">Acknowledgment</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="mobile-nav" id="mobileNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="changelog.html">Changelog</a></li>
+                <li><a href="citation.html">Citation</a></li>
+                <li><a href="credits.html">Acknowledgment</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <style>
+        :root {
+            --primary: rgb(60, 130, 246);
+            --primary-light: rgba(60, 130, 246, 0.1);
+            --primary-dark: rgb(40, 100, 220);
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --border-color: #d1e3fa;
+            --success: #10b981;
+        }
+
+        .div-body {
+            color: var(--text-primary);
+            /* background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); */
+            background-color: rgba(240, 246, 253, 1) !important;
+        }
+
+        .div-container {
+            background-color: rgba(240, 246, 253, 1) !important;
+            max-width: 100%;
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .div-header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+            color: #2c3e50;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .p-subject {
+            font-size: 16px;
+            opacity: 0.9;
+            margin: 0;
+            font-weight: 300;
+            max-width: 100%;
+            line-height: 1.5;
+            text-align: center;
+            padding: 0 10px;
+        }
+
+        .content-section {
+            margin-bottom: 2.5rem;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-light);
+            text-align: center;
+            width: 100%;
+        }
+
+        .content-container {
+            width: 100%;
+            max-width: 900px;
+            background: var(--bg-primary) !important;
+            border-radius: 18px;
+            padding: 2.2rem;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.07);
+            border: 1px solid var(--border-color);
+            margin-top: 14px;
+        }
+
+        .content-container h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .content-container {
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-container {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            font-size: 16px;
+            font-weight: 100;
+        }
+
+        a {
+            text-decoration: none !important;
+            color: var(--text-primary) !important;
+        }
+
+        a:hover {
+            color: var(--text-primary) !important;
+        }
+
+        @media (max-width: 1280px) {
+            .div-container {
+                padding: 0 !important;
+                margin: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 auto !important;
+                box-sizing: border-box !important;
+                overflow-x: hidden;
+            }
+
+            .div-header {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 auto !important;
+                box-sizing: border-box !important;
+            }
+
+            .content-section {
+                width: 85% !important;
+                max-width: 85% !important;
+                margin: 0 auto !important;
+                box-sizing: border-box !important;
+            }
+
+            h1 {
+                font-size: 3rem !important;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+                margin-bottom: 14px;
+            }
+
+            .content-container {
+                width: 100% !important;
+                padding: 1.5rem;
+            }
+        }
+
+                /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            position: relative;
+            /* Added for mobile nav positioning */
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--secondary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Hamburger Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            width: 30px;
+            height: 21px;
+            position: relative;
+        }
+
+        .menu-toggle span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: var(--dark);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            position: absolute;
+        }
+
+        .menu-toggle span:nth-child(1) {
+            top: 0;
+        }
+
+        .menu-toggle span:nth-child(2) {
+            top: 9px;
+        }
+
+        .menu-toggle span:nth-child(3) {
+            top: 18px;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg);
+            top: 9px;
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg);
+            top: 9px;
+        }
+
+        /* Mobile Navigation - Fixed with proper margins */
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 30px;
+            right: 30px;
+            background: white;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 40px;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            z-index: 999;
+        }
+
+        .mobile-nav.active {
+            display: block;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .mobile-nav li {
+            margin-bottom: 15px;
+        }
+
+        .mobile-nav a {
+            text-decoration: none;
+            color: var(--dark);
+            left: 40px;
+            font-size: 18px;
+            line-height: 0.5;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: block;
+            padding: 8px 0;
+        }
+
+        .mobile-nav a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-nav .header-buttons {
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        /* Responsive Design - Fixed mobile header padding */
+        @media (max-width: 1280px) {
+            .header-container {
+                padding: 15px 20px;
+                /* Added left and right padding */
+            }
+
+            nav,
+            .header-buttons {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            /* Ensure mobile nav has proper margins */
+            .mobile-nav {
+                left: 20px;
+                right: 20px;
+                width: auto;
+            }
+        }
+
+        @media (min-width: 1281px) {
+            .mobile-nav {
+                display: none !important;
+            }
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .integra-logo {
+            display: flex !important;
+            align-items: center !important;
+            gap: 10px !important;
+            text-decoration: none !important;
+        }
+
+        .integra-logo span {
+            display: flex !important;
+            align-items: center !important;
+            line-height: 1 !important;
+        }
+    </style>
+
+
+
+    <div style="margin-bottom: 80px;"></div>
+
+    <div class="div-body">
+        <div class="div-container">
+            <div class="div-header">
+                <h1>Integra Studio Privacy Policy</h1>
+                <p class="p-subject">Last Updated: January 2024</p>
+            </div>
+
+            <div class="content-section">
+                <div class="content-container">
+                    <p>At Integra Studio, we take your privacy seriously. This Privacy Policy describes how we collect, use, and protect your personal information when you use our face image identification and recognition toolkit.</p>
+
+                    <h3>Information We Collect</h3>
+                    <p>When you use Integra Studio, we may collect:</p>
+                    <ul class="li-margin">
+                        <li>Images you upload for processing</li>
+                        <li>Technical information about your device and browser</li>
+                        <li>Usage data to improve our services</li>
+                        <li>Contact information if you choose to provide it</li>
+                    </ul>
+
+                    <h3>How We Use Your Information</h3>
+                    <p>We use the collected information to:</p>
+                    <ul class="li-margin">
+                        <li>Provide and improve our face recognition services</li>
+                        <li>Process your images and return results</li>
+                        <li>Respond to your inquiries and support requests</li>
+                        <li>Ensure the security and integrity of our services</li>
+                    </ul>
+
+                    <h3>Data Storage and Retention</h3>
+                    <p>Uploaded images are processed in real-time and are not stored on our servers after processing unless explicitly required for service improvement (with user consent). Metadata may be retained for analytical purposes.</p>
+
+                    <h3>Third-Party Services</h3>
+                    <p>We use trusted third-party services for hosting and infrastructure. These providers have their own privacy policies governing data handling.</p>
+
+                    <h3>Your Rights</h3>
+                    <p>You have the right to:</p>
+                    <ul class="li-margin">
+                        <li>Access any personal information we hold about you</li>
+                        <li>Request correction or deletion of your information</li>
+                        <li>Opt-out of data collection where possible</li>
+                        <li>Request information about how your data is used</li>
+                    </ul>
+
+                    <h3>Changes to This Policy</h3>
+                    <p>We may update this Privacy Policy periodically. We will notify users of any significant changes by posting the new policy on our website.</p>
+
+                    <h3>Contact Us</h3>
+                    <p>If you have questions about this Privacy Policy, please contact us through our Contact page.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .div-container2 {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .gradio-container {
+            max-width: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        /* Footer */
+        .footer {
+            background: #0f172a;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* Responsive Design - Fixed mobile header padding */
+        @media (max-width: 1280px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .gray-blue {
+            color: rgba(148, 163, 184, 1) !important;
+            font-size: 16px !important;
+        }
+
+        .gray-blue:hover {
+            color: white !important;
+            font-weight: 500 !important;
+        }                
+
+        .gray-white {
+            color: white !important;
+            font-size: 16px !important;
+        }
+    </style>
+
+    <div style="height: 40px;"></div>
+
+    <div class="footer">
+        <div class="div-container2">
+            <div class="footer-container" style="font-weight: 300 !important;">
+                <div class="footer-col">
+                    <h3 style="color: white !important;">Integra Studio</h3>
+                    <p style="font-size: 16px; color: white !important;">Advanced facial analysis and recognition platform for professional use</p>
+                    <div class="social-links">
+                        <a href="https://x.com/tutu_rulianda" rel="nofollow"><i style="color: rgba(148, 163, 184, 1) !important;" class="fab fa-twitter"></i></a>
+                        <a href="https://github.com/tutu-rulianda" rel="nofollow"><i style="color: rgba(148, 163, 184, 1) !important;" class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/tutu-rulianda" rel="nofollow"><i style="color: rgba(148, 163, 184, 1) !important;" class="fab fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/tutu.rulianda" rel="nofollow"><i style="color: rgba(148, 163, 184, 1) !important;" class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3 style="font-size: 16px; color: white !important;">Product</h3>
+                    <ul>
+                        <li><a class="gray-blue" href="features.html">Features</a></li>
+                        <li><a class="gray-blue" href="changelog.html">Changelog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3 style="font-size: 16px; color: white !important;">Information</h3>
+                    <ul>
+                        <li><a class="gray-blue" href="about.html">About</a></li>
+                        <li><a class="gray-blue" href="citation.html">Citation</a></li>
+                        <li><a class="gray-blue" href="credits.html">Acknowledgment</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3 style="font-size: 16px; color: white !important;">Legal</h3>
+                    <ul>
+                        <li><a class="gray-blue" href="disclaimer.html">Disclaimer</a></li>
+                        <li><a class="gray-blue" href="policy.html">Privacy Policy</a></li>
+                        <li><a class="gray-blue" href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <style>
+                .p-copyright {
+                    cursor: default !important;
+                    transition: color 0.3s, transform 0.3s cubic-bezier(.68, -0.55, .27, 1.55) !important;
+                }
+
+                .p-copyright:hover {
+                    color: white !important;
+                    transform: scale(1.02) skewX(-2deg) !important;
+                }
+            </style>
+            <div class="footer-bottom">
+                <p class="gray-blue p-copyright" style="font-size: 14px !important;">&copy; 2025 Tutu Rulianda. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Hamburger menu functionality
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileNav = document.getElementById('mobileNav');
+
+        menuToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileLinks = document.querySelectorAll('.mobile-nav a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                menuToggle.classList.remove('active');
+                mobileNav.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    menuToggle.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                }
+            });
+        });
+
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
+            }
+            
+            // Close mobile menu when scrolling
+            if (mobileNav.classList.contains('active')) {
+                menuToggle.classList.remove('active');
+                mobileNav.classList.remove('active');
+            }
+        });
+        const signInModal = document.getElementById('signInModal');
+        const modalClose = document.getElementById('modalClose');
+        const signInBtns = document.querySelectorAll('#signInBtn, #mobileSignInBtn, #heroSignInBtn, #demoSignInBtn, #ctaSignInBtn, #modalGmailBtn');
+        signInBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                signInModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                if (this.id === 'modalGmailBtn') {
+                    window.location.href = '/login';
+                }
+            });
+        });
+        modalClose.addEventListener('click', function() {
+            signInModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        signInModal.addEventListener('click', function(e) {
+            if (e.target === signInModal) {
+                signInModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && signInModal.classList.contains('active')) {
+                signInModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+    <script>
+        (function () {
+            console.log('=== FIXED SCROLL BUTTON ===');
+
+            // 1. Remove any existing scroll button first
+            const oldScrollBtn = document.getElementById('scrollTopBtn');
+            if (oldScrollBtn) oldScrollBtn.remove();
+
+            // 2. FIXED SCROLL BUTTON - Use absolute positioning and direct event
+            const scrollBtn = document.createElement('button');
+            scrollBtn.id = 'scrollTopBtn';
+            scrollBtn.innerHTML = '⌃';
+            scrollBtn.title = 'Back to Top';
+            scrollBtn.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 1000002;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            opacity: 0.9;
+            transition: all 0.3s ease;
+            display: none; /* Initially invisible */
+        `;
+
+            // Track the last scrolled element to know what to scroll back up
+            let lastScrolledContainer = window;
+
+            // DIRECT CLICK HANDLER
+            scrollBtn.addEventListener('click', function (e) {
+                console.log('🎯 Scroll button clicked directly');
+                e.preventDefault();
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+
+                // 1. Scroll the last detected container
+                if (lastScrolledContainer && lastScrolledContainer.scrollTo) {
+                    try {
+                        lastScrolledContainer.scrollTo({ top: 0, behavior: 'smooth' });
+                    } catch (err) {
+                        lastScrolledContainer.scrollTop = 0;
+                    }
+                }
+
+                // 2. Scroll standard window/body targets just in case
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
+                document.body.scrollTo({ top: 0, behavior: 'smooth' });
+
+                // 3. Try to find Gradio container explicitly
+                const gradioContainer = document.querySelector('.gradio-container');
+                if (gradioContainer) {
+                    gradioContainer.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+
+            document.body.appendChild(scrollBtn);
+            console.log('✅ Fixed scroll button added');
+
+            // GLOBAL CAPTURE SCROLL LISTENER
+            window.addEventListener('scroll', function (e) {
+                const target = e.target;
+
+                // Determine scroll position based on target type
+                let scrollTop = 0;
+
+                if (target === document) {
+                    scrollTop = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+                    lastScrolledContainer = window;
+                } else if (target instanceof Element) {
+                    scrollTop = target.scrollTop;
+                    lastScrolledContainer = target;
+                }
+
+                // Show/Hide button
+                if (scrollTop > 100) {
+                    scrollBtn.style.display = 'block';
+                } else {
+                    scrollBtn.style.display = 'none';
+                }
+            }, { capture: true, passive: true });
+
+            // 3. CSS for smooth scrolling
+            const style = document.createElement('style');
+            style.textContent = `
+            html, body {
+                scroll-behavior: smooth !important;
+            }
+            #scrollTopBtn {
+                z-index: 1000002 !important;
+            }
+        `;
+            document.head.appendChild(style);
+        })();
+    </script>
+</body>
+</html>

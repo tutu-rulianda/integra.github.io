@@ -1,0 +1,15 @@
+{
+  "name": "integra-studio",
+  "description": "Integra Studio is a face image identification and recognition toolkit built using Gradio on top of Python.",
+  "entrypoint": "integra-studio.py:integra-ui",
+  "content_category": "application",
+  "environment": {
+    "python": {
+      "version": "3.10.18", 
+      "requirements_file": "requirements.txt"
+    }
+  },
+  "metadata": {
+    "app_mode": "gradio"
+  }
+}

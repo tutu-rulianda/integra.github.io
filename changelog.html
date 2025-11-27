@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7F6P778BVR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-7F6P778BVR');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changelog - Integra Studio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+    <link rel="manifest" href="/site.webmanifest">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        :root {
+            --primary: #007bff;
+            --primary-dark: #0056b3;
+            --secondary: #2563eb;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --gray-light: #e2e8f0;
+        }
+
+        body {
+            background-color: white;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Layout Components */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            margin-bottom: -70px;
+        }
+
+        .container h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+        }
+        
+        .container h2 {
+            font-size: 3.0rem;
+            line-height: 1.3;
+        }
+        
+        .container p {
+            font-size: 1.4rem;
+            font-weight: 300;
+        }
+
+        header {
+            background-color: transparent;
+            box-shadow: none;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            min-height: 70px;
+        }
+
+        header.scrolled {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 70px;
+            padding: 0 20px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }        
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--secondary);
+        }        
+
+        nav {
+            margin-left: auto;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), -1px -1px 0 rgba(255, 255, 255, 0.3);
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        header.scrolled nav a {
+            color: var(--dark);
+            text-shadow: none;
+        }
+
+        /* nav a:hover {
+            color: var(--primary);
+        } */
+
+        /* Hamburger Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            width: 30px;
+            height: 21px;
+            position: relative;
+        }
+
+        .menu-toggle span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: white;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            position: absolute;
+        }
+
+        header.scrolled .menu-toggle span {
+            background-color: var(--dark);
+        }
+
+        .menu-toggle span:nth-child(1) {
+            top: 0;
+        }
+
+        .menu-toggle span:nth-child(2) {
+            top: 9px;
+        }
+
+        .menu-toggle span:nth-child(3) {
+            top: 18px;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg);
+            top: 9px;
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg);
+            top: 9px;
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 30px;
+            right: 30px;
+            background: white;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 40px;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            z-index: 999;
+        }
+
+        .mobile-nav.active {
+            display: block;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .mobile-nav li {
+            margin-bottom: 15px;
+        }
+
+        .mobile-nav a {
+            text-decoration: none;
+            color: var(--dark);
+            left: 40px;
+            font-size: 18px;
+            line-height: 0.5;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: block;
+            padding: 8px 0;
+        }
+
+        /* .mobile-nav a:hover {
+            color: var(--primary);
+        } */
+
+        .mobile-nav .header-buttons {
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        .footer {
+            background: #0f172a;
+            color: white;
+            padding: 60px 0 0;
+            margin-bottom: 0;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 1280px) {
+            .header-container {
+                padding: 15px 20px;
+            }
+
+            nav,
+            .header-buttons {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .hero {
+                padding: 140px 0 80px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .mobile-nav {
+                left: 20px;
+                right: 20px;
+                width: auto;
+            }
+        }
+
+        @media (min-width: 1281px) {
+            .mobile-nav {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .changelog-container {
+                overflow: hidden;
+            }
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Additional Styles */
+        .integra-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        
+        .integra-logo span {
+            display: flex;
+            align-items: center;
+            line-height: 1;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), -1px -1px 0 rgba(255, 255, 255, 0.3);
+            mix-blend-mode: overlay;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled .integra-logo span {
+            color: var(--primary);
+            text-shadow: none;
+            mix-blend-mode: normal;
+        }
+
+        .changelog-hero {
+            padding: 160px 0 80px;
+            background: linear-gradient(135deg, #f0f4ff 0%, #e6f0ff 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .changelog-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 70%, rgba(0, 123, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 20%, rgba(0, 123, 255, 0.05) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .changelog-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            position: relative;
+            z-index: 1;
+        }
+
+        .changelog-hero p {
+            font-size: 20px;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .changelog-container {
+            padding: 80px 0;
+            background: white;
+            margin-top: 0px;
+            margin-bottom: -100px;
+        }
+
+        .changelog-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .changelog-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gray-light);
+            transform: translateX(-50%);
+        }
+
+        .changelog-item {
+            display: flex;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .changelog-left {
+            width: 100px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .changelog-date {
+            text-align: center;
+            font-weight: 600;
+            color: var(--gray);
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        .changelog-marker {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
+            z-index: 1;
+            position: absolute;
+            top: 10px;
+            left: 50px;
+            transform: translateX(-50%);
+        }
+
+        .changelog-content {
+            flex: 1;
+            background: var(--light);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e0e0e0;
+            margin-left: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .changelog-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .changelog-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .changelog-version {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .changelog-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge-new {
+            background: rgba(40, 167, 69, 0.1);
+            color: #28a745;
+            border: 1px solid rgba(40, 167, 69, 0.3);
+        }
+
+        .badge-update {
+            background: rgba(0, 123, 255, 0.1);
+            color: var(--primary);
+            border: 1px solid rgba(0, 123, 255, 0.3);
+        }
+
+        .badge-fix {
+            background: rgba(220, 53, 69, 0.1);
+            color: #dc3545;
+            border: 1px solid rgba(220, 53, 69, 0.3);
+        }
+
+        .changelog-list {
+            list-style: none;
+        }
+
+        .changelog-list li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .changelog-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .changelog-category {
+            font-weight: 600;
+            margin-top: 15px;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        @media (max-width: 1280px) {
+            .changelog-hero {
+                padding: 140px 0 60px;
+            }
+
+            .changelog-hero h1 {
+                font-size: 36px;
+            }
+
+            .changelog-hero p {
+                font-size: 18px;
+            }
+
+            .changelog-container {
+                padding: 60px 0;
+            }
+
+            .changelog-timeline::before {
+                left: 30px;
+            }
+
+            .changelog-left {
+                width: 60px;
+            }
+
+            .changelog-date {
+                font-size: 14px;
+                margin-top: 25px;
+            }
+
+            .changelog-marker {
+                left: 30px;
+                top: 8px;
+            }
+
+            .changelog-content {
+                padding: 20px;
+                margin-left: 20px;
+            }
+
+            .changelog-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* Consolidated Animation Keyframes */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            33% {
+                transform: translateY(-20px) rotate(120deg);
+            }
+            66% {
+                transform: translateY(10px) rotate(240deg);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(30px);
+            animation: slideInRight 0.8s ease-out forwards;
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .stagger-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .stagger-item:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+
+        .stagger-item:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+
+        .stagger-item:nth-child(3) {
+            transition-delay: 0.3s;
+        }
+
+        .stagger-item:nth-child(4) {
+            transition-delay: 0.4s;
+        }
+
+        .stagger-item:nth-child(5) {
+            transition-delay: 0.5s;
+        }
+
+        .stagger-item:nth-child(6) {
+            transition-delay: 0.6s;
+        }
+
+        .text-reveal {
+            opacity: 0;
+            animation: fadeInUp 1.2s ease-out forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.6s;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            border: none;
+            outline: none;
+        }
+
+        .btn:hover {
+            color: black;
+        }        
+
+        .btn-light {
+            font-size: 1.4rem;
+            background: white;
+            color: var(--dark);
+            font-weight: 600;
+            border-radius: 25px;
+            border: 1 solid #999;
+            box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            cursor: default;
+        }
+
+        .app-header h1:hover {
+            transform: scale(1.05) skewX(-2deg);
+        }
+
+        .app-header .tagline:hover {
+            transform: scale(1.05) skewX(-2deg);
+        }
+
+        .container-hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-image: url('./static/changelog.webp');
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+
+        .centered-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            text-align: center;
+            width: 90%;
+            max-width: 800px;
+        }
+
+        .blending-text {
+            font-size: 4rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 
+                2px 2px 4px rgba(0, 0, 0, 0.8),
+                -1px -1px 0 rgba(255, 255, 255, 0.3);
+            mix-blend-mode: overlay;
+            margin: 5rem 0 1.5rem 0;
+            line-height: 4.1rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 0.2s;
+        }
+
+        .text-content {
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+            line-height: 1.6;
+            margin: 0;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 0.5s;
+        }
+
+        /* Fixed button animation - starts with opacity 0 and animates after delay */
+        .btn-bounce {
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards, bounce 2s ease infinite;
+            animation-delay: 0.8s, 2.5s; /* Increased bounce delay to ensure fadeIn completes first */
+        }
+
+        .floating-shape {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float 15s infinite ease-in-out;
+            z-index: 1;
+        }
+
+        .shape-1 {
+            top: 20%;
+            left: 10%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            bottom: 30%;
+            right: 15%;
+            width: 120px;
+            height: 120px;
+            animation-delay: 5s;
+        }
+
+        .shape-3 {
+            top: 60%;
+            left: 20%;
+            width: 60px;
+            height: 60px;
+            animation-delay: 10s;
+        }
+
+        @media (max-width: 1280px) {
+            .blending-text {
+                font-size: 3.5rem;
+                margin: 3rem 0 1.5rem 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .blending-text {
+                font-size: 2.5rem;
+                line-height: 2.8rem;
+            }
+            
+            .text-content {
+                font-size: 1.2rem;
+            }
+        }        
+
+        .gray-blue {
+            color: rgba(148, 163, 184, 1);
+            font-size: 16px;
+        }
+
+        .gray-blue:hover {
+            color: white;
+            font-weight: 500;
+        }        
+
+        html, body {
+            scroll-behavior: smooth;
+        }
+
+        /* Reduced motion support for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms;
+                animation-iteration-count: 1;
+                transition-duration: 0.01ms;
+            }
+            
+            .pulse, .floating, .btn-bounce {
+                animation: none;
+            }
+        }
+
+        .vh {
+            position: absolute;
+            height: 1px;
+            width: 1px;
+            overflow: hidden;
+            clip: rect(1px, 1px, 1px, 1px);
+        }
+        
+        /* Loading Spinner */
+        .loading-spinner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.3s ease;
+        }
+        
+        .loading-spinner.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .menu-toggle span {
+            background: white;
+            transition: background 0.3s ease;
+        }
+
+        header.scrolled .menu-toggle span {
+            background: var(--dark);
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="integra-logo">
+                <span class="logo-text">Integra Studio</span>
+            </a>
+            <div class="header-right">                
+                <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="changelog.html">Changelog</a></li>
+                    <li><a href="citation.html">Citation</a></li>
+                    <li><a href="credits.html">Acknowledgment</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="mobile-nav" id="mobileNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="changelog.html">Changelog</a></li>
+                <li><a href="citation.html">Citation</a></li>
+                <li><a href="credits.html">Acknowledgment</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container-hero">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        
+        <div class="centered-content">
+            <h1 class="blending-text">Changelog</h1>
+            <p class="text-content">Stay updated with the latest improvements, features, and fixes in Integra Studio.</p>
+            <a href="#integra-changelog" class="btn btn-light btn-bounce">&nbsp;&nbsp;Explore Changelog&nbsp;&nbsp;</a>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add scroll-triggered animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Reset animations on page load
+            const animatedElements = document.querySelectorAll('.blending-text, .text-content, .btn');
+            animatedElements.forEach(el => {
+                el.style.animation = 'none';
+                // Trigger reflow
+                void el.offsetWidth;
+                // Re-enable animation
+                el.style.animation = null;
+            });
+
+            // Add scroll listener for additional animations
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * -0.5;
+                document.querySelector('.container-hero').style.transform = `translateY(${rate}px)`;
+            });
+        });
+    </script>    
+
+    <section id="integra-changelog" class="changelog-container" style="overflow: hidden;">
+        <div class="container">
+            <div class="changelog-timeline">
+                <!-- Version 3.1.0 -->
+                <div class="changelog-item stagger-item">
+                    <div class="changelog-left">
+                        <div class="changelog-marker floating"></div>
+                        <div class="changelog-date">Nov 24, 2025</div>
+                    </div>
+                    <div class="changelog-content fade-in-up">
+                        <div class="changelog-header">
+                            <h3 class="changelog-version">Version 3.1.0</h3>
+                            <span class="changelog-badge badge-update pulse">Update</span>
+                        </div>
+                        <ul class="changelog-list">
+                            <li>Conducted bug fixes.</li>
+                            <li>Implemented enhancements to improve speed.</li>
+                            <li>Revised the previously unsuccessful sideways face profile identification and verification process.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Version 3.0.0 -->
+                <div class="changelog-item stagger-item">
+                    <div class="changelog-left">
+                        <div class="changelog-marker floating"></div>
+                        <div class="changelog-date">Oct 25, 2025</div>
+                    </div>
+                    <div class="changelog-content fade-in-up">
+                        <div class="changelog-header">
+                            <h3 class="changelog-version">Version 3.0.0</h3>
+                            <span class="changelog-badge badge-new pulse">Major Release</span>
+                        </div>
+                        <p class="changelog-category">New Features</p>
+                        <ul class="changelog-list">
+                            <li>Introduced dashboards with features for identifying, verifying, predicting, recognizing, and detecting human faces.</li>
+                            <li>Updated profile recognition system to detect faces by aligning and rotating profiles sideways.</li>
+                        </ul>
+                        <p class="changelog-category">Improvements</p>
+                        <ul class="changelog-list">
+                            <li>Enhanced face verification algorithm.</li>
+                            <li>Enhanced gender recognition for individuals of diverse ethnicities.</li>
+                            <li>Streamlined user interface to accommodate users of all ages and genders.</li>
+                            <li>Discontinued using YOLO dependency for age and gender detection.</li>
+                            <li>Bug fixes on enrollment process</li>
+                        </ul>
+                    </div>
+                </div>                
+                <!-- Version 2.1.0 -->
+                <div class="changelog-item stagger-item">
+                    <div class="changelog-left">
+                        <div class="changelog-marker floating"></div>
+                        <div class="changelog-date">Sep 25, 2025</div>
+                    </div>
+                    <div class="changelog-content fade-in-up">
+                        <div class="changelog-header">
+                            <h3 class="changelog-version">Version 2.1.0</h3>
+                            <span class="changelog-badge badge-new pulse">New Features</span>
+                        </div>
+                        <ul class="changelog-list">
+                            <li>Multi-face detection has been implemented in group photos.</li>
+                            <li>Enhanced age estimation algorithm with 15% improved accuracy.</li>
+                            <li>Added support for profile face recognition</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Version 2.0.5 -->
+                <div class="changelog-item stagger-item">
+                    <div class="changelog-left">
+                        <div class="changelog-marker floating"></div>
+                        <div class="changelog-date">Sep 18, 2025</div>
+                    </div>
+                    <div class="changelog-content fade-in-up">
+                        <div class="changelog-header">
+                            <h3 class="changelog-version">Version 2.0.5</h3>
+                            <span class="changelog-badge badge-update pulse">Update</span>
+                        </div>
+                        <ul class="changelog-list">
+                            <li>Optimized face matching algorithm for faster processing.</li>
+                            <li>Improved user interface for mobile devices.</li>
+                            <li>Enhanced security protocols for data protection.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Version 2.0.0 -->
+                <div class="changelog-item stagger-item">
+                    <div class="changelog-left">
+                        <div class="changelog-marker floating"></div>
+                        <div class="changelog-date">Aug 10, 2025</div>
+                    </div>
+                    <div class="changelog-content fade-in-up">
+                        <div class="changelog-header">
+                            <h3 class="changelog-version">Version 2.0.0</h3>
+                            <span class="changelog-badge badge-new pulse">Major Release</span>
+                        </div>
+                        <p class="changelog-category">New Features</p>
+                        <ul class="changelog-list">
+                            <li>Completely redesigned user interface with improved UX.</li>
+                            <li>Added facial landmark detection for 68 key points.</li>
+                            <li>Implemented emotion recognition with 7 basic emotions.</li>
+                            <li>Utilized RDBMS for storing face profiles.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Version 1.5.3 -->
+                <div class="changelog-item stagger-item">
+                    <div class="changelog-left">
+                        <div class="changelog-marker floating"></div>
+                        <div class="changelog-date">Jul 22, 2023</div>
+                    </div>
+                    <div class="changelog-content fade-in-up">
+                        <div class="changelog-header">
+                            <h3 class="changelog-version">Version 1.5.3</h3>
+                            <span class="changelog-badge badge-fix pulse">Bug Fixes</span>
+                        </div>
+                        <ul class="changelog-list">
+                            <li>Fixed issue with face detection in low-light conditions.</li>
+                            <li>Resolved memory leak in face matching module.</li>
+                            <li>Fixed gender misclassification for certain age groups.</li>
+                            <li>Addressed security vulnerability in profile management.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Version 1.5.0 -->
+                <div class="changelog-item stagger-item">
+                    <div class="changelog-left">
+                        <div class="changelog-marker floating"></div>
+                        <div class="changelog-date">Jun 15, 2023</div>
+                    </div>
+                    <div class="changelog-content fade-in-up">
+                        <div class="changelog-header">
+                            <h3 class="changelog-version">Version 1.5.0</h3>
+                            <span class="changelog-badge badge-update pulse">Update</span>
+                        </div>
+                        <ul class="changelog-list">
+                            <li>Added batch processing for multiple face analysis.</li>
+                            <li>Improved age estimation for children and elderly.</li>
+                            <li>Enhanced face recognition with occlusion handling.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Version 1.0.0 -->
+                <div class="changelog-item stagger-item">
+                    <div class="changelog-left">
+                        <div class="changelog-marker floating"></div>
+                        <div class="changelog-date">May 5, 2023</div>
+                    </div>
+                    <div class="changelog-content fade-in-up">
+                        <div class="changelog-header">
+                            <h3 class="changelog-version">Version 1.0.0</h3>
+                            <span class="changelog-badge badge-new pulse">Initial Release</span>
+                        </div>
+                        <ul class="changelog-list">
+                            <li>Initial release of Integra Studio.</li>
+                            <li>Face identification and verification.</li>
+                            <li>Age and gender estimation.</li>
+                            <li>Basic facial expression recognition.</li>
+                            <li>Face landmarks detection.</li>
+                            <li>Face profile management.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div style="height: 80px;"></div>
+
+    <div class="footer" style="overflow: hidden;">
+        <div class="container">
+            <div class="footer-container" style="font-weight: 300;">
+                <div class="footer-col">
+                    <h3>Integra Studio</h3>
+                    <p style="font-size: 16px !important">Advanced facial analysis and recognition platform for professional use</p>
+                    <div class="social-links">
+                        <a href="https://x.com/tutu_rulianda" rel="nofollow"><i class="fab fa-twitter"></i></a>
+                        <a href="https://github.com/tutu-rulianda" rel="nofollow"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/tutu-rulianda" rel="nofollow"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/tutu.rulianda" rel="nofollow"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Product</h3>
+                    <ul>
+                        <li><a class="gray-blue" href="features.html">Features</a></li>
+                        <li><a class="gray-blue" href="changelog.html">Changelog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Info</h3>
+                    <ul>
+                        <li><a class="gray-blue" href="about.html">About</a></li>
+                        <li><a class="gray-blue" href="citation.html">Citation</a></li>
+                        <li><a class="gray-blue" href="credits.html">Acknowledgment</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a class="gray-blue" href="disclaimer.html">Disclaimer</a></li>
+                        <li><a class="gray-blue" href="policy.html">Privacy Policy</a></li>
+                        <li><a class="gray-blue" href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <style>
+                .p-copyright {
+                    cursor: default;
+                    transition: color 0.3s, transform 0.3s cubic-bezier(.68, -0.55, .27, 1.55);
+                }
+
+                .p-copyright:hover {
+                    color: white;
+                    transform: scale(1.02) skewX(-2deg);
+                }
+            </style>
+            <div class="footer-bottom">
+                <p class="gray-blue p-copyright" style="font-size: 14px;">&copy; 2025 Tutu Rulianda. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get DOM elements
+        const header = document.querySelector('header');
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileNav = document.getElementById('mobileNav');
+        
+        // Initialize navigation
+        function initNavigation() {
+            if (menuToggle && mobileNav) {
+                console.log('Setting up hamburger menu click handler');
+                
+                menuToggle.addEventListener('click', function(e) {
+                    e.stopPropagation(); // Prevent event bubbling
+                    console.log('Hamburger menu clicked');
+                    
+                    this.classList.toggle('active');
+                    mobileNav.classList.toggle('active');
+                    
+                    // Change header background when mobile menu is open
+                    if (this.classList.contains('active')) {
+                        header.classList.add('scrolled');
+                    } else {
+                        // Only remove scrolled if not actually scrolled
+                        if (window.scrollY <= 100) {
+                            header.classList.remove('scrolled');
+                        }
+                    }
+                });
+                
+                // Close menu when clicking on mobile links
+                const mobileLinks = document.querySelectorAll('.mobile-nav a');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        menuToggle.classList.remove('active');
+                        mobileNav.classList.remove('active');
+                        
+                        // Remove scrolled class when closing mobile menu if not scrolled
+                        if (window.scrollY <= 100) {
+                            header.classList.remove('scrolled');
+                        }
+                    });
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (mobileNav.classList.contains('active') && 
+                        !menuToggle.contains(e.target) && 
+                        !mobileNav.contains(e.target)) {
+                        menuToggle.classList.remove('active');
+                        mobileNav.classList.remove('active');
+                        
+                        if (window.scrollY <= 100) {
+                            header.classList.remove('scrolled');
+                        }
+                    }
+                });
+            } else {
+                console.error('Menu elements not found:', {menuToggle, mobileNav});
+            }
+        }
+        
+        // Header scroll effect
+        function initHeaderScroll() {
+            window.addEventListener('scroll', function() {
+                // Close mobile menu when scrolling
+                if (menuToggle && menuToggle.classList.contains('active')) {
+                    menuToggle.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                }
+                
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        }
+        
+        // Scroll-triggered animations
+        function initScrollAnimations() {
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.85
+                );
+            }
+
+            function animateElements() {
+                const staggerItems = document.querySelectorAll('.stagger-item');
+
+                staggerItems.forEach(element => {
+                    if (isInViewport(element)) {
+                        element.classList.add('visible');
+                    }
+                });
+            }
+            
+            // Initial check
+            animateElements();
+            
+            // Check on scroll
+            window.addEventListener('scroll', animateElements);
+        }
+        
+        // Initialize everything
+        initNavigation();
+        initHeaderScroll();
+        initScrollAnimations();
+    });
+</script>
+    <script>
+        (function () {
+            console.log('=== FIXED SCROLL BUTTON ===');
+
+            // 1. Remove any existing scroll button first
+            const oldScrollBtn = document.getElementById('scrollTopBtn');
+            if (oldScrollBtn) oldScrollBtn.remove();
+
+            // 2. FIXED SCROLL BUTTON - Use absolute positioning and direct event
+            const scrollBtn = document.createElement('button');
+            scrollBtn.id = 'scrollTopBtn';
+            scrollBtn.innerHTML = '⌃';
+            scrollBtn.title = 'Back to Top';
+            scrollBtn.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 1000002;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            opacity: 0.9;
+            transition: all 0.3s ease;
+            display: none; /* Initially invisible */
+        `;
+
+            // Track the last scrolled element to know what to scroll back up
+            let lastScrolledContainer = window;
+
+            // DIRECT CLICK HANDLER
+            scrollBtn.addEventListener('click', function (e) {
+                console.log('🎯 Scroll button clicked directly');
+                e.preventDefault();
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+
+                // 1. Scroll the last detected container
+                if (lastScrolledContainer && lastScrolledContainer.scrollTo) {
+                    try {
+                        lastScrolledContainer.scrollTo({ top: 0, behavior: 'smooth' });
+                    } catch (err) {
+                        lastScrolledContainer.scrollTop = 0;
+                    }
+                }
+
+                // 2. Scroll standard window/body targets just in case
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
+                document.body.scrollTo({ top: 0, behavior: 'smooth' });
+
+                // 3. Try to find Gradio container explicitly
+                const gradioContainer = document.querySelector('.gradio-container');
+                if (gradioContainer) {
+                    gradioContainer.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+
+            document.body.appendChild(scrollBtn);
+            console.log('✅ Fixed scroll button added');
+
+            // GLOBAL CAPTURE SCROLL LISTENER
+            window.addEventListener('scroll', function (e) {
+                const target = e.target;
+
+                // Determine scroll position based on target type
+                let scrollTop = 0;
+
+                if (target === document) {
+                    scrollTop = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+                    lastScrolledContainer = window;
+                } else if (target instanceof Element) {
+                    scrollTop = target.scrollTop;
+                    lastScrolledContainer = target;
+                }
+
+                // Show/Hide button
+                if (scrollTop > 100) {
+                    scrollBtn.style.display = 'block';
+                } else {
+                    scrollBtn.style.display = 'none';
+                }
+            }, { capture: true, passive: true });
+
+            // 3. CSS for smooth scrolling
+            const style = document.createElement('style');
+            style.textContent = `
+            html, body {
+                scroll-behavior: smooth !important;
+            }
+            #scrollTopBtn {
+                z-index: 1000002 !important;
+            }
+        `;
+            document.head.appendChild(style);
+        })();
+    </script>
+</body>
+</html>
